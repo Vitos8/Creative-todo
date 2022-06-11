@@ -1,0 +1,86 @@
+
+
+.add-folder-modal{
+     position: absolute;
+     width: 235px;
+     height: 148px;
+     border-radius: 10px;
+     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.463);
+     padding: 18px 18px 15px 18px;
+     background-color: #fff;
+     margin-top: -30px;
+     margin-left: 15px;
+
+     i{
+          cursor: pointer;
+
+          &:hover{
+               filter: brightness(80%);
+          }
+     }
+
+     &__input{
+          margin-bottom: 13px;
+          padding: 7px 0px 8px 11px;
+          background: #FFFFFF;
+          border: 1px solid #7a7676;
+          border-radius: 4px;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 17px;
+          letter-spacing: 0.15px;
+          color: #09011a9b;
+
+          &:focus{
+               border: 1px solid #09011A;
+          }
+     }
+
+     &__row{
+          margin-bottom: 13px;
+          display: flex;
+          column-gap: 5px;
+     }
+
+     .close{
+          position: relative;
+          img{
+               position: absolute;
+               top: -69px;
+               right: -25px;
+               cursor: pointer;
+     
+               &:hover{
+                    opacity: 0.8;
+               }
+          }
+     }
+
+     
+     .badge__size{
+          width: 16px;
+          height: 16px;
+     
+
+     }
+
+     &__btn{
+          width: 100%;
+          padding: 10px 0px;
+          background: #4DD599;
+          border-radius: 4px;     
+          border: none;
+          color: #ffff;
+          cursor: pointer;
+          &:hover{
+               background: darken(#4DD599, 10%);
+               transition: all .3s ease;
+          }
+     }
+}
+
+
+
+
+
+
