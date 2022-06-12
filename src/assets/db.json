@@ -1,36 +1,6 @@
 {
-  "lists": [
-    {
-      "name": "ilonka topchuk",
-      "colorId": 6,
-      "id": 1
-    },
-    {
-      "name": "Vitalik",
-      "colorId": 2,
-      "id": 2
-    }
-  ],
-  "tasks": [
-    {
-      "name": "Поцьомати пітарду",
-      "completed": false,
-      "listId": 2,
-      "id": 2
-    },
-    {
-      "name": "Пітарда",
-      "completed": false,
-      "listId": 2,
-      "id": 3
-    },
-    {
-      "name": "Поцьомати Ілонку",
-      "completed": true,
-      "listId": 1,
-      "id": 4
-    }
-  ],
+  "lists": [],
+  "tasks": [],
   "colors": [
     {
       "id": 1,

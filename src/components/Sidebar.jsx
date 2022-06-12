@@ -4,7 +4,7 @@ import listSvg from "../assets/img/list.svg";
 import addSvg from "../assets/img/add.svg";
 import AddFolder from "./List/AddFolder";
 import closeSvg from '../assets/img/close.svg';
-
+import Loading from './Loading';
 
 
 function Sidebar({colors, lists, onAddList, onRemoveFolder, onClickItem, active, onClickAllTasks}) {
@@ -29,7 +29,7 @@ function Sidebar({colors, lists, onAddList, onRemoveFolder, onClickItem, active,
                     onRemoveFolder={onRemoveFolder}
                     onClickItem={onClickItem}
                     active={active}
-               />) : (<h2 >Loading</h2> )}
+               />) : <Loading/>}
                <AddFolder addSvg={addSvg}  closeSvg={closeSvg}  colors={colors} lists={lists} onAddList={onAddList}  />
           </div>
      );
