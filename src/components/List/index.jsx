@@ -3,14 +3,13 @@ import Badge from "../Badge/index";
 import "./List.scss";
 import removeSvg from "../../assets/img/remove.svg";
 import axios from "axios";
-import { Link } from "react-router-dom";
-
+import {API} from "../Api";
 
 function List({ items, onClick, onRemoveFolder, onClickItem, active, allTasks, onClickAllTasks }) {
 
      let removeFolder = (item) => {
           if ( window.confirm('Delete this folder ?')) {
-               axios.delete('http://localhost:3001/lists/' + item.id).then(()=> {
+               axios.delete(`${API}/lists/${item.id}`).then(()=> {
                     onRemoveFolder(item);
                });
           }

@@ -1,10 +1,10 @@
-import {React, useState}from 'react';
+import {React}from 'react';
 import editSvg from '../assets/img/edit.svg';
 import closeSvg from '../assets/img/close.svg';
-import { useNavigate } from 'react-router';
 import axios from 'axios';
 import AddTask from './AddTask/index';
 import './Badge/Badge.scss';
+import {API} from './Api';
 
 let Tasks = ({list, onEditTitle, onAddTask, withoutEmpty, onClickTitle,onCompleteTask, completed, onRemoveTask}) => {
      const onChangeCheckbox = (e, id) => {
@@ -16,7 +16,7 @@ let Tasks = ({list, onEditTitle, onAddTask, withoutEmpty, onClickTitle,onComplet
 
           if ( newTitle) {
                onEditTitle(list.id, newTitle);
-               axios.patch("http://localhost:3001/lists/" + list.id, {
+               axios.patch(`${API}/lists/${list.id}`, {
                     name: newTitle,
                }).catch( () => {
                     alert("Can't update a new name !")
@@ -26,7 +26,7 @@ let Tasks = ({list, onEditTitle, onAddTask, withoutEmpty, onClickTitle,onComplet
 
      let onRemove = (id) => {
           onRemoveTask(list.id, id);
-          axios.delete("http://localhost:3001/tasks/" + id).catch(() => {
+          axios.delete(`${API}/tasks/${id}`).catch(() => {
                alert("Can't delete this task !")
           })
      };

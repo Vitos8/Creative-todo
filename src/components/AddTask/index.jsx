@@ -1,8 +1,8 @@
 import {React, useState} from 'react';
-import List from '../List/index';
 import addSvg from '../../assets/img/add.svg';
 import './AddTask.scss';
 import axios from 'axios';
+import {API} from "../Api";
 
 let AddTask = ({list, onAddTask, withoutEmpty}) => {
      const [visibleModal, setVisibleModal] = useState(false);
@@ -19,7 +19,7 @@ let AddTask = ({list, onAddTask, withoutEmpty}) => {
                listId: list.id
           }
 
-          axios.post('http://localhost:3001/tasks', obj).then(({data}) => {
+          axios.post(`${API}/tasks`, obj).then(({data}) => {
                onAddTask(list.id, data)
                setVisibleModal(false);
                setinputValue('');

@@ -5,7 +5,7 @@ import List from "./index.jsx";
 import Badge from "../Badge/index.jsx";
 import './List.scss';
 import './addFolder.scss';
-
+import {API} from "../Api";
 
 function AddFolder({ addSvg, closeSvg, colors, onAddList, lists }) {
      const [visibleModal, setVisibleModal] = useState(false);
@@ -34,7 +34,7 @@ function AddFolder({ addSvg, closeSvg, colors, onAddList, lists }) {
           }
 
           setIsLoading(true);
-          axios.post('http://localhost:3001/lists', {name:inputValue, colorId: badgeActive})   
+          axios.post(`${API}/lists`, {name:inputValue, colorId: badgeActive})   
           .then(({data})=>{
                let color = colors.filter(c => c.id ===  badgeActive)[0].name;
                let listObj = {...data, color:{name:color}}
