@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import {Link, Route, Routes, useNavigate} from "react-router-dom";
+import {Route, Routes, useNavigate} from "react-router-dom";
 import axios from "axios";
 
-import { List, AddFolder, Tasks, Sidebar } from "./components";
+import { Tasks, Sidebar } from "./components";
 import NotFound from "./components/NotFound";
-
+import {API} from "./components/Api";
 
 
 
@@ -16,14 +16,14 @@ function App() {
     let navigate = useNavigate();
     
     useEffect(() => {
-        axios.get("http://localhost:3001/lists?_expand=color&_embed=tasks").then(({ data }) => {
+        axios.get(`${API}/lists?_expand=color&_embed=tasks`).then(({ data }) => {
                 setlists(data);
             });
-        axios.get("http://localhost:3001/colors").then(({ data }) => {
+        axios.get(`${API}/colors`).then(({ data }) => {
             setColors(data);
         });
 
-    axios.get('http://localhost:3001/tasks').then(({data}) => {
+    axios.get(`${API}/tasks`).then(({data}) => {
         setTasks(data.length);
     });
 
@@ -59,7 +59,7 @@ function App() {
 
     let onClickAllTasks =  () => {    
         setActivePath(null, '/')        
-        window.location.reload();                                                                
+        // window.location.reload();                                                                
     };
 
     let onClickTitle = (obj) => {
