@@ -59,7 +59,7 @@ function App() {
 
     let onClickAllTasks =  () => {    
         setActivePath(null, '/')        
-        // window.location.reload();                                                                
+        window.location.reload();                                                                
     };
 
     let onClickTitle = (obj) => {
