@@ -21,7 +21,7 @@
   "scripts": {
     "start": "node server.js",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts  start",
     "eject": "react-scripts eject",
     "fake-json": "json-server ./src/assets/db.json --watch --port 3001"
   },

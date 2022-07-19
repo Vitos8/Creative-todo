@@ -93,7 +93,7 @@ function App() {
         return list;
     });
     setlists(newList);
-    axios.patch('http://localhost:3001/tasks/' + taskId, {
+    axios.patch(`${API}/tasks/` + taskId, {
         completed
     })
     .catch(() => {
@@ -115,6 +115,7 @@ function App() {
 
 
     return (
+    <>
         <div className="todo">
             <Sidebar
                 colors={colors}
@@ -137,6 +138,8 @@ function App() {
                 </Routes>
             </div>  
         </div>
+        <footer className="footer">Created by Vitalik Golubovich</footer>
+        </>
     );
 }
 
